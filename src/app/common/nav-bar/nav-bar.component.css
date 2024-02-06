@@ -1,0 +1,10 @@
+.logo{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+}
+
+.flexNav{
+    display: flex;
+    justify-content: space-between;
+}

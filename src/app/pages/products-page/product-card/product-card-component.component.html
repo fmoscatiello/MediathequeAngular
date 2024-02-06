@@ -1,0 +1,30 @@
+<!--utilisation de bootstrap pour mise en forme, la balise cdn qui appelle bootstrap est appellée dans le app.component.html-->
+<body>
+    <div class="card" style="width: 20rem;">
+        @if (!product.img) {
+        <img src="https://cdn.pixabay.com/photo/2023/03/11/20/14/windmill-7845201_1280.jpg" alt="...">
+        }
+        @if (product.img) {
+        <img src={{product.img}} class="card-img-top" alt="...">
+        }
+        <div class="card-body">
+            <h2 class="card-title">{{product.nom}}</h2>
+            @if (product.artiste) {
+            <p class="card-text">{{product.artiste}}</p>
+            }
+            @if (product.real) {
+            <p class="card-text">{{product.real}}</p>
+            }
+            <p class="card-text">{{product.annee}}</p>
+            @if (product.synopsis) {
+            <p class="card-text">{{product.synopsis | slice: 0:150}}...</p>}
+
+            @if (product.synopsis) {
+                <button type="button" class="btn btn-primary" routerLink="/products/films/{{product.id}}">Details</button>
+            }
+            @if(product.artiste){
+                <button type="button" class="btn btn-primary" routerLink="/products/albums/{{product.id}}">Details</button>
+            }
+        </div>
+    </div>
+</body>
